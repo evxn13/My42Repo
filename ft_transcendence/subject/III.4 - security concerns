@@ -1,0 +1,40 @@
+subject / Page 8
+
+1. Passwords
+	[OBLIGATOIRE]
+	- Tous les mots de passe stockes dans la DB douvent etre cryptes (hashed)
+
+ !	Faut utiliser un algo de hashing de mots de passe solide
+ !  ========================================================
+
+2. SQL injections/XSS
+	- Faut montrer les muscles et etre protege contre les injections SQL / XSS (ง'̀-')ง
+
+3. HTTPS Everywhere
+	- Connection HTTPS OBLIGATOIRE pour tous les aspets du site
+	(! utiliser wss a la place de ws)
+
+4. FORMULAIRES
+	- Chaques champs de formulaires (genre formulaire d'inscription, de login, ...) et chaques inputs d'un utilisateur
+	  (donc par exemple dans le formulaire d'inscription, son email, son mdp, etc.. et meme dans ses settings,
+	  changer son MFP, sa PP, etc..) doivent etre verifies (tout le temps tout verif, par exemple, si l'email est valide,
+	  si le mot de passe est valide (faut une politique de MDP), si le nom d'user est valide, etc...)
+		- Faire les checks dans le front SI pas de backend
+		[OU]
+		- Faire les checks dans le backend (verifications cote serveur)
+
+4.a
+	- Politique de MDP
+	- Politique de Nom D'utilisateur
+	- Politique de Photo de Profile
+
+5. JWT Security module
+	- Si on fait le module JWT Security avec 2FA, il est crucial de securiser le site.
+	  Par exemple, si on fait une API, il faut proteger toutes les Routes
+	(! meme si on decide de ne pas usiliser de tokens JWT, secutiser le site reste essentiel)
+
+
+ !	Tous les identifiants, cles API, variables d'env, etc... (toutes les infos sensibles)
+ !	doivent etre enrengistres localement dans un fichier .env et doit etre ignore par git	[C'EST FAIT - .gitignore]
+ !	- Stocker publiquement des infos sensibles = 0 instant a la correction
+ !	=================================================================================================================

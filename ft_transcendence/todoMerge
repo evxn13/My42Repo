@@ -1,0 +1,60 @@
+TRUCS A FAIRE EN PLUS
+
+* [OK]	merge avec isibio		(git pull origin isibio)
+* [OK]	merge avec rbulanad		(git pull origin rbulanad)
+* [OK]	merge avec acanavat		(git pull origin acanavat)
+* [OK]	merge avec tpicoule		(git pull origin tpicoule)
+
+* [OK]	re-check l'erreur (apres les merge) : https://[hostname].42nice.fr:8080/account/login?token=shit
+* []	retirer les console.log qui servent a rien
+
+// ----------------------
+CE QUI A ETE FAIT
+	* [OK]	fichiers a la racine du projet
+	* [OK]	env
+	* [OK]	container backend
+	* [OK]	container chat
+	* [OK]	container container_template
+	* [OK]	container database
+	* [OK]	container fastify-account
+	* [OK]	container frontend
+	* [OK]	container game_ai
+	* [OK]	container game_backend
+	* [OK]	container lib
+	* [OK]	container nginx
+
+
+* [OK]	nginx : create_nginx.conf.sh : location /ws-chat proxy pass a https ?
+* [OK]	global : tester de retirer les package.json a la racine du projet
+* [OK]	frontend :	check sendGameHistoryToChat (srcs/game/components/GameSummary.tsx)
+					+ et le useEffect
+* [OK]	frontend :	check app.tsx, meybe problems
+* [??]	frontend : /website/package.json -> "dev": "vite --host" // check si probleme (a la base pas de --host)
+				   -> je prefere pas toucher en vrai
+* [OK]	env : ports.env.template -> clean les env useless
+* [OK]	fastify-account : main.js -> truc de evan (JWT) place sous silence, check si ca pose probleme
+
+* [OK]	check que le chat utilise bien HTTPS pour les routes de reddy
+
+// -----------------------
+MERGE AVEC TPICOOL
+
+CE QUI A ETE FAIT
+	* [Ok]	env
+	* [Ok]	fichiers a la racine du projet
+	* [OK]	container backend
+	* [OK]	container chat
+	* [OK]	container container_template
+	* [OK]	container database
+	* [OK]	container fastify-account
+	* [OK]	container frontend
+	* [OK]	container game_ai
+	* [OK]	container game_backend
+	* [OK]	container lib
+	* [OK]	container nginx
+
+* [OK]	frontend : AccountRegister -> const timer a check si sus (check par rapport a la branche de tpicoule, avant le merge)
+* [OK]	frontend : index.css -> check les changements de evan
+* [OK]	frontend : nique la police ACAB GamePage.tsx -> erreur quand on join une room avec nom a la con `roomIdToJoin.trim is not a function`
+
+* [OK]	frontend : AccountGestion -> check si tout marche nickel

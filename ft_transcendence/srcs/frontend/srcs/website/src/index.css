@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scrollbar stylée pour toute l'app */
+::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 8px;
+  border: 2px solid #111;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Pour Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #222 #000;
+}
+
+/* Classe personnalisée pour l'input file - Compatible tous navigateurs */
+.custom-file-input {
+  @apply mt-2 px-4 py-2 bg-white/10 rounded-lg text-white hover:bg-white/20 transition-all duration-300 cursor-pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Chrome, Safari, Edge */
+.custom-file-input::-webkit-file-upload-button {
+  @apply bg-transparent border-none text-white cursor-pointer;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+/* Firefox */
+.custom-file-input::file-selector-button {
+  @apply bg-transparent border-none text-white cursor-pointer;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+/* Internet Explorer (ancien) */
+.custom-file-input::-ms-browse {
+  @apply bg-transparent border-none text-white cursor-pointer;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+/* Fallback pour les navigateurs très anciens */
+.custom-file-input {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-file-input:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}

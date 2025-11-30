@@ -1,0 +1,153 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    todoIsibio                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: isibio <isibio@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/05/09 10:54:27 by isibio            #+#    #+#              #
+#    Updated: 2025/05/09 10:54:30 by isibio           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+
+* [OK]	dev and implement BallHitObjectWS
+
+* [OK]	clean Ball rebound calculations (with new speed / angle values)
+* [OK]	handle Ball size for collisions
+* [OK]	fix (implement) Paddle collision with Ball
+* [OK]	Attendre qu'il y ait assez de joueurs pour lancer la game
+* [OK]	Replacer la balle quand il y a un point
+* [--]	smooth paddle movement
+* [OK]	Handle end game
+* [??]	Handle player deco from Room
+* [OK]	Ball replacement random angle
+* [OK]	fix les paddle, signaux bloquands, seulement 1 a la fois peut move
+* [OK]	parser tous les game customisation options donnes par l'user
+* [OK]	envoyer le nom de la room au front
+
+* [--]	3D
+* [--]	Switch from basic WS library to Fastify WS
+			- AI too
+
+* [OK]	Error when matchmaking + create room
+
+* [OK]	create maps
+* [OK]	map preview
+* [OK]	room creation name, unique
+* [OK]	ia room custom
+* [OK]	dev la page "GamePageCreateAI"
+
+* [OK]	invite des personnes aux games (chat)
+* [OK]	add a 'spectate' game feature
+			- just add the client to gameRoom's client map without owning a paddle
+
+* [OK]	laisser le client apres deco dans le GameSummary
+
+* [OK]	Tournament Room
+* [OK]		voir pour la page "Create tournament" (!= join tournament)
+				- create tournament page = create room page
+				- remplacer 'player in room' par 'player in tournament' (4 OR 6)
+				- remplacer la case 'room name' par 'tournament name'
+* [OK]		update matchmaking
+* [OK]			faire le matchmaking tournament
+* [OK]			empecher les clients dans le matchmaking normal de pouvoir join un TournamentRoom
+* [OK]		update method 'canPlayInRoom()'
+* [OK]		handle player spectating
+* [OK]		handle TournamentSummaryWS
+* [OK]		handle ClientTournamentDataWS.clientDisconnected when client disconnected
+* [--]		POSSIBLE ISSUE : when client joined, tournamentRoom didn't send 'RoomCreationEventWS' but 'TournamentCreationEventWS'
+* [--]		POSSIBLE ISSUE : gameRoomName length (when tournament is creating rooms)
+* [OK]		annoncer le prochain match
+* [OK]			+ envoyer data au chat
+
+* [--]	Donner a acanavat les owner des murs + qui correspond a quels uuid
+
+
+* [OK]	link with Reddy & Acanavat's part (accounts)
+			- Easier if when client connect to GameBackend, account part check if the user is valid, and give me data about player
+			- When the game ends, i send stats to Account container
+* [XX]	thing about user stats
+			- User profiles display stats, such as wins and losses.
+			- Each user has a Match History including 1v1 games, dates, and relevant
+			details, accessible to logged-in users
+
+			-> Send to database the final gameRoom.clientArray, or only the ClientRoomDataWS objects
+
+* [OK]	utiliser le https
+			[OK] HTTPS	server reddy
+			[OK] WSS	evan
+* [OK]	hame page, remplacer 'go to login' a 'go to game'
+
+* [OK]	game page create (front) : update sendMapToBackend() to remove LaunchGameEventWS
+* [OK]	nginx, fermer les ports (sauf PORT_NGINX)
+* [OK]	retirer tous les <href>
+* [--]	retirer les sleep infinite
+* [OK]	passer /lib hors BIND-MOUNTED volume
+* [OK]	BackendWsProvider : connectToBackend() -> getClientId() utiliser axios pour call la route de Reddy
+* [OK]	update 'lib/postToFastify' : url a passer en HTTPS
+* [OK]	fix la faille de secu
+* [OK]	reddy game stats avec l'ia
+* [OK]	GameBackend : call a la route /me en HTTPS
+* [OK]	fix le truc de brandon "To secure game_backend <> fastify-account  communication for /gameStats  request. Example code."
+* [OK]	fix Brandon ALERTE ENORME BUG (matchmaking dans une room 1v1 ia)
+* []	un hacker chinois peut faire jouer l'ia sand son conscentement
+* [OK]	clone le repo pout voir si tout s'installe bien
+
+* [OK]	erreur : https://c1r2p2.42nice.fr:8080/account/login?token=shit
+* [OK]	tommi erreur dans RoomCreationEventWS.js:154:41, quand on crre la room et qu'on change le nom, y'a une uncaught reference error
+* [OK]	frontend (todoMerge) : nique la police ACAB GamePage.tsx -> erreur quand on join une room avec nom a la con `roomIdToJoin.trim is not a function`
+
+* [OK]	remove useless console.log (all containers)
+
+DERNIERES BRIQUES 
+* [OK]	verifier les .env avant de les push (et les .template, faut pas d'infos sensibles)
+* [OK]	set all DOCKERDEBUG a 'false'
+* [OK]	passer le hmr a false dans vite config
+* [OK]	compose.yaml : retirer volume './srcs/frontend/srcs:/var/transcendence-frontend'
+* [OK]	clone le repo pout voir si tout s'installe bien -- rappel
+
+______________________________________________________________________________________________________________________
+* [OK]	ISSUE : player quit pendant le countdown ne stop pas la game !!!
+* [--]	ISSUE : matchmaking long a trouver la room quand un client1 a lance le matchmaking et qu'apres un client2 cree une room
+* [OK]	ISSUE : bug matchmaking, client1 cree une room | client2 cree une room | client3 lance le matchmaking -> client3 a join les 2 rooms
+* [--]	ISSUE : bug matchmaking, client1 lance le matchmaking | client2 lance le matchmaking | client3 cree une room a 2 joueurs -> client3 est seul dans la room, la partie est lancee
+* [--]	ISSUE : bug matchmaking, client1 (matchmaking) client2 (matchmaking) et client3 (cree la game) sont dans une game, client3 quitte et recree une game, client1 et/ou client2 va join la room et l'ancienne game reste affichee
+		-> pourntial fix, remove les gens de la page /game/main une fois que la game est terminee
+* [XX]	ISSUE : gameRoom : removeClient() -> quand 3 clients sont connectes a la room mais que un quitte, ca stop pour les 2 joueurs restants
+* [--]	ISSUE : square map : player1 collision problems
+* [OK]	ISSUE : spectate : quand un spectateur quitte la game, ca stop la game (faut pas)
+* [OK]	ISSUE : ai : ai ne leave pas la room quand la partie est terminee
+* [OK]	ISSUE : 2 players in the same gameRoom, db error
+
+* [OK]	ISSUE? : login page : pas de message si le compte n'est pas valide
+
+______________________________________________________________________________________________________________________
+
+# [OK]	TEST: matchmaking tournament, 7x clients joining tourmament matchmaking, 1x client creating a new tournament
+		RESULT : seulement 3x des 7x clients one join le tourmament
+# [OK]	TEST: tournament 4 players
+		RESAULT : Matchmaking		OK
+				: Match Handling	OK
+				: TourmanentSummary	OK
+				: Spectating		OK
+# [OK]	TEST: tournament 6 players
+		RESAULT : Matchmaking		OK
+				: Match Handling	OK
+				: TourmanentSummary	OK
+				: Spectating		OK
+# []	TEST: tournament 8 players
+# [OK]	TEST: 2 tournaments playing at the same time
+# []	TEST: room joining from name
+
+
+git commit -m "fixed some optimization issues (ft. bsoubaig)" -m "changes :
+ - [fastify-account] auth.js : now init 'authorization' with 'req' instead of 'request'
+ - [frontend] BallHitObject : changed logic to pre-load every sounds
+ - [frontend] GameMainPage : done some optimization
+ - [frontend] GamePageCreate : removed matchmaking for games created for chat invitation
+ - [frontend] done translations on 'GamePageCreate' 'GamePageCreateAI' 'GamePageTournament' and 'LiveCounter'
+"
+
+Maj : IIIIIII
+Min : II I

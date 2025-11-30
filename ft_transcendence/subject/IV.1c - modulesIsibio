@@ -1,0 +1,94 @@
+• Web
+	◦ Major module: Store the score of a tournament in the Blockchain.
+		- PAS SUR PAS SUR DU TOUT 	
+
+• Gameplay and user experience
+	◦ Major module: Remote players
+		- OK a faire
+			-> It is possible to have two distant players. Each player is located on a separated
+			   computer, accessing the same website and playing the same Pong game.
+			-> ! Think about network issues, like unexpected disconnection or lag.
+			   ! You have to offer the best user experience possible.
+		- Si deco, on stop la partie
+		- Le lag on peut pas y faire grand chose, mais faut faire un jeu opti
+
+	◦ Major module: Multiplayers (more than 2 in the same game).
+		- [A DICSUTER AVEC TT LE MONDE]
+		- on peut juste mettre un 2v2, avec 4 joueurs en meme temps dans la partie
+			-> It is possible to have more than two players. Each player needs a live control (so
+		       the previous “Distant players” module is highly recommanded). It’s up to you to
+			   define how the game could be played with 3, 4, 5, 6 ... players. Along with the
+			   regular 2 players game, you can choose a single number of players, greater than
+		       2, for this multiplayer module. Ex: 4 players can play on a squarred board, each
+			   player owns one unique side of the square.
+
+	◦ Minor module: Game Customization Options.
+		- Demande peut-etre trop pour un module mineur, faut s'y prendre au debut de la creation du jeu
+		- Mais go quand meme prevoire de faire le jeu en mode modulaire
+		(et donc parametable)
+			-> Offer customization features, such as power-ups, attacks, or different maps,
+			   that enhance the gameplay experience.
+			-> Allow users to choose a default version of the game with basic features
+			   if they prefer a simpler experience.
+			-> Ensure that customization options are available and applicable to all games
+			   offered on the platform.
+			-> Implement user-friendly settings menus or interfaces for adjusting game parameters.
+			-> Maintain consistency in customization features across all games to provide a
+			   unified user experience.
+			   This module aims to give users the flexibility to tailor their gaming experience
+			   across all available games by providing a variety of customization options while
+			   also offering a default version for those who prefer a straightforward gameplay
+			   experience.
+
+• AI-Algo
+	◦ Minor module: User and Game Stats Dashboards
+		- implique beaucoup beaucoup de travail pour un mineur (meme pour un majeur)
+		- faut le voir des le debut de la construction du jeu
+		- pas sur de le faire, pas opti
+
+• Devops
+	◦ Minor module: Monitoring system.
+		- Peut etre cool a faire, pk pas
+		-> Deployer Prometeus comme un outil de monitoring et d'alertes pour collecter des donnes, et utiliser Grafana pour
+		  l'affichage (resume tres bref)
+
+• Graphics
+	◦ Major module: Use of advanced 3D techniques.
+		- Peut etre faisable
+		-> ThreeJS/WebGL
+
+• Accessibility
+	◦ Minor module: Expanding Browser Compatibility.
+		- Peut etre faisable, mais vaut pas le coup si il demande trop de travail
+		  en mode le module est cool si on le valide gratuitement sans trop le travailler
+		-> Gerer un nouveau navigateur, s'assurer que les users puissent y acceder et les utiliser similairement
+		(Resume en bref)
+
+	◦ Minor module: Multiple language supports.
+		- Faut s'y prendre a la fin ou tout le long du projet, c'est a celui qui fait le front de voir
+		- Faisable
+
+	◦ Minor module: Add accessibility for Visually Impaired Users.
+		- A l'air chiant a faire, plus un trvail pour le front
+
+	◦ Minor module: Server-Side Rendering (SSR) Integration.
+		- Brandon sait pas mais il dit que c nul
+
+• Server-Side Pong
+	◦ Major module: Replacing Basic Pong with Server-Side Pong and Implementing an API.
+		- Faut le faire
+		-> Faire touerner tout le jeu (mouvement de la balle, des paddles, les scores, ... (bref tout en gros)) dans le backend
+		-> Creer une API qui expose les infos et les routes necessaires pour intergir avec le jeu, ce qui permet un usage parciel
+		   du jeu via terminal (CLI) (ca veut pas dire qu'il faut le faire)
+		-> Implementer des routes API pour supporter l'initialisation du jeu, les controles du joueur et les differents etats du jeu
+		   (communication du front au back)
+		-> Faut bien faire un sorte que le jeu soit responsive (reactif, avec un faible temps de reponse)
+		   entre le font et le backend
+		-> Integrer le jeu dans du backend avec l'application web (le frontend), pour que les joueurs puissent jouer au jeu sur le site
+
+	◦ Major module: Enabling Pong Gameplay via CLI against Web Users with API Integration.
+		- Askip c nul, beaucoup de travail on dirai
+		-> Faire une app CLI (dans le terminal) qui replique l'experience qu'on a sur le site,
+		   depuis l'invite de commande, l'utilisateur doit aussi pouvoir jouer au jeu
+		-> Utiliser l'API du backend pour communiquer du CLI au site web
+		(Resume en bref)

@@ -1,0 +1,57 @@
+subject / Page 7
+
+1. Local vs Remote
+	- En local, les joueurs sur le meme clavier
+	[ET / PAS OBLIGE]
+	- Remote players module
+
+2. Tournament
+	[OBLIGATOIRE]
+
+3. Registration System
+	[OBLIGATOIRE]
+	- Au debut d'un tournoi, les joueurs doivent input leurs 'alias name'
+		-> l'alias est reset a chaque fois que l'user fait un nouveau tournoi
+	[PEUT ETRE MODIFIE DANS]
+	- Standard User Management module.
+
+4. Matchmaking System
+	[OBLIGATOIRE]
+	- Pour le tournament, on organise le matchmaking des participents et on annonce le prochain fight
+
+5. Same rules for all players !
+	- Les joueurs doivent suivre les memes regles
+	! inclut que les joueurs ont une vitesse de paddle identique
+	! s'applique aussi a l'IA
+
+6.a	Technicals
+	- Le jeu doit etre dev en suivant les contraintes par defaut du FrontEnd (voir. 2 - technicalRequirement)
+	[OU]
+	- On utilise le FrontEnd module.
+	[OU]
+	- On a l'option de le remplacer avec le Graphics module. (pour le jeu seulement)
+
+6.b Visuals
+	- Les visuels aestetics de jeu peuvent etre variees, mais tant que ca "capture l'essence du pong original de 1972" ca va
+
+7. (pas indique dans le sujet)
+	- Il faut explicitement indiquer les regles et coment jouer quelque part dans le site
+
+
+ !	Il est interdit d'utiliser des libs ou des outils qui nous donnent des solutions completes
+ !	pour une feature globale ou un module
+ !
+ !	??? Any direct instruction about the usage (can, must, can’t) of a
+ !	??? third-party library or tool must be followed
+ !	
+ !	L'utilisation d'une petite lib ou d'un petit outil (˵ ¬ᴗ¬˵) pour resoudre une simple et unique tache,
+ !	représentant un sous-composant d'une feature globale ou d'un module, est authorisee
+ !	
+ !	Pendant l'evaluation. la team va devoir justifier toutes les utilisations de libs / outils qui ne sont
+ !	pas explicitement approuves par le sujet (??? et qui ne rentrent pas en contradiction avec les
+ !	contraintes du sujet) 
+ !	
+ !	Pendant l'evaluation, l'evaluateur va prendre ses responsapilites et va lui-meme definire si l'usage
+ !	d'une lib specifique est ou d'un outil est legitime (et donc authorise |:)
+ !  ou solve quasi tout le module ou la feature (et donc pas authorise >:(
+ !	======================================================================================================

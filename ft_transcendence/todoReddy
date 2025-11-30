@@ -1,0 +1,11 @@
+- merge avec evan
+
+- link le jeu avec le system d'account (WIP)
+
+* []	erreur changement de profile picture : "Erreur inconnue handler avatar"
+	AccountGestion.tsx:122 API error: 
+	AxiosError {message: 'Request failed with status code 413', name: 'AxiosError', code: 'ERR_BAD_REQUEST', config: {…}, request: XMLHttpRequest, …}
+	{data: '<html>\r\n<head><title>413 Request Entity Too Large<…disable MSIE and Chrome friendly error page -->\r\n', status: 413, statusText: 'Request Entity Too Large', headers: AxiosHeaders, config: {…}, …}
+* []	quand change utilisateurs mais que ca respecte pas les conditions de nom d'utilisateur
+	Error 400
+* [] historique not working fuck it 

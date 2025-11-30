@@ -1,0 +1,150 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    compose.yaml                                       :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: isibio <isibio@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/02/26 17:06:16 by isibio            #+#    #+#              #
+#    Updated: 2025/06/27 11:06:41 by rbulanad         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# -- -- SERVICES
+
+services:
+  frontend:
+    env_file:
+      - "./env/ports.env"
+      - "./env/leReste.env"
+      - "./env/hostname.env"
+    # ports:
+    #   - "8550:8550"
+    volumes:
+      - LIB-volume:/lib/transcendence
+      - NGINX-volume:/var/transcendence-nginx
+    build: ./srcs/frontend/
+    container_name: frontend
+    restart: on-failure
+    networks:
+      transcendence:
+
+  game_backend:
+    env_file:
+      - "./env/ports.env"
+      - "./env/leReste.env"
+    build: ./srcs/game_backend/
+    # ports:
+    #   - "8540:8540"
+    volumes:
+      - LIB-volume:/lib/transcendence
+      - NGINX-volume:/var/transcendence-nginx
+    container_name: game_backend
+    restart: on-failure
+    networks:
+      transcendence:
+      
+  chat:
+    env_file:
+      - "./env/ports.env"
+      - "./env/hostname.env"
+      - "./env/leReste.env"
+    build: 
+      context: ./srcs/chat/
+      dockerfile: Dockerfile
+    # ports:
+    #   - "8443:8443"
+    container_name: chat
+    volumes:
+      - LIB-volume:/lib/transcendence
+      - NGINX-volume:/var/transcendence-nginx
+      - DB-volume:/var/transcendence-database
+    restart: on-failure
+    networks:
+      - transcendence
+
+  game_ai:
+    env_file:
+      - "./env/ports.env"
+      - "./env/hostname.env"
+    build: ./srcs/game_ai/
+    # ports:
+    #   - "8530:8530"
+    volumes:
+      - LIB-volume:/lib/transcendence
+      - NGINX-volume:/var/transcendence-nginx
+    container_name: game_ai
+    restart: on-failure
+    networks:
+      transcendence:
+
+  nginx:
+    env_file:
+      - "./env/ports.env"
+      - "./env/hostname.env"
+      - "./env/leReste.env"
+    build: ./srcs/nginx/
+    ports:
+      - "8080:8080"
+    volumes:
+      - NGINX-volume:/var/transcendence-nginx
+      - LIB-volume:/lib/transcendence
+    container_name: nginx
+    restart: on-failure
+    networks:
+      transcendence:
+
+  database:
+    env_file:
+      - "./env/ports.env"
+      - "./env/leReste.env"
+    build: ./srcs/database/
+    # ports:
+    #   - "8560:8560"
+    volumes:
+      - LIB-volume:/lib/transcendence
+      - DB-volume:/var/transcendence-database
+    container_name: database
+    restart: on-failure
+    networks:
+      transcendence:
+
+  fastify-account:
+    env_file:
+      - "./env/ports.env"
+      - "./env/leReste.env"
+      - "./env/hostname.env"
+    build: ./srcs/fastify-account/
+    # ports:
+    #   - "5500:5500"
+    volumes:
+      - LIB-volume:/lib/transcendence
+      - DB-volume:/var/transcendence-database
+      - NGINX-volume:/var/transcendence-nginx
+    container_name: fastify-account
+    restart: on-failure
+    networks:
+      transcendence:
+
+  lib:
+    build:
+      context: .
+      dockerfile: srcs/lib/Dockerfile
+    volumes:
+      - LIB-volume:/lib/transcendence
+    container_name: lib
+    restart: on-failure
+    networks:
+      transcendence:
+
+# -- -- NETWORKS
+networks:
+  transcendence:
+    driver: bridge
+
+# -- -- SECRETS
+# -- -- VOLUMES
+volumes:
+  DB-volume:
+  NGINX-volume:
+  LIB-volume:

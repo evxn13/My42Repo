@@ -1,0 +1,37 @@
+subject / Page 6
+
+1. Backend
+	Si on decide de faire un backend
+		- Full RUBY
+			[OU]
+		- Framework module.
+	Si notre backend ou notre framework utilise une database, on doit suivre les contraintes du
+		- Database Module.
+
+2. FrontEnd
+	- pure vanilla Javascript
+		[OU] 
+	- FrontEnd module.
+
+3. Single Page
+	https://en.wikipedia.org/wiki/Single-page_application
+	- tout reste dans la meme page (! pas de nouvel onglet !)
+	- faut pouvoir utiliser les fleches BACK et FORWARD du navigateur (page precedente / page suivante en haut a gauche)
+
+4. Google Chrome
+	- Le site doit etre compatible avec la derniere version stable de Google Chrome, c'est notre nagigateur de reference
+
+5. Error Handling
+	- L'utilisateur ne doit pas croider d'erreurs non geres
+	- L'utilisateur ne doit pas croider de warnings
+	- Pas de erreur 500 dans le backend, instant 0 sinon
+
+6. Launch!
+	- Tout doit etre lance en utilisant une seule ligne de commande
+		- ex: Makefile, docker-compose up --build
+
+ !	Nous devons utiliser docker en 'rootless mode' pour des raisons de secutite,
+ !	ca provoque 2 consequences
+ !	
+ !	- On ne peut pas utiliser les "volumes bind-mount" entre le host et le conteneur
+ !	================================================================================

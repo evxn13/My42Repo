@@ -1,0 +1,28 @@
+subject / Pages 9
+
+Avec la partie oblogatoire, on est a 25% du projet, on va devoir utiliser les modules pour augmenter cette note
+
+Pour avoir 100 (le minimum), il faut faire 7 modules majeur
+ !	2 Modules mineur = 1 Module majeur
+
+Attention, des modules vont demander pas mal de modifications au site, faut s'y prendre a l'avance et bien lire le sujet
+avant de commencer le projet
+
+
+ !	Il est interdit d'utiliser des libs ou des outils qui nous donnent des solutions completes
+ !	pour une feature globale ou un module
+ !
+ !	??? Any direct instruction about the usage (can, must, can’t) of a
+ !	??? third-party library or tool must be followed
+ !	
+ !	L'utilisation d'une petite lib ou d'un petit outil (˵ ¬ᴗ¬˵) pour resoudre une simple et unique tache,
+ !	représentant un sous-composant d'une feature globale ou d'un module, est authorisee
+ !	
+ !	Pendant l'evaluation. la team va devoir justifier toutes les utilisations de libs / outils qui ne sont
+ !	pas explicitement approuves par le sujet (??? et qui ne rentrent pas en contradiction avec les
+ !	contraintes du sujet) 
+ !	
+ !	Pendant l'evaluation, l'evaluateur va prendre ses responsapilites et va lui-meme definire si l'usage
+ !	d'une lib specifique est ou d'un outil est legitime (et donc authorise |:)
+ !  ou solve quasi tout le module ou la feature (et donc pas authorise >:(
+ !	======================================================================================================

@@ -1,0 +1,80 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    todotpicoule                                       :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/05/14 16:57:23 by tpicoule          #+#    #+#              #
+#    Updated: 2025/06/26 18:46:43 by tpicoule         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# - Prendre une douche et acheter un coca bien frais chacal a isibio -- > bizar la douche non ?
+# - diner romantique a eze avec Regnaille Bulanadi
+
+# -----------Regnaillllllle------------------------------|
+# - Enlever le boutton Login de la page Home             |
+# - Historique des parties                               |
+# - module jsplus koi                                    |
+# -----------Regnaillllllle------------------------------|
+
+# -Couleurs peut etre
+# -Historique / Historique des userS ---> finir avec les nouvelles donnees
+# Page historique ----> responsiv
+
+# -TYPESCRIPT :
+# ----> Home.tsx = done
+#-----> Sidebar.tsx = done
+#-----> LiveCounter.tsx = done
+#-----> AdBanner.tsx = done ---> some errors(not typescript)
+#-----> Login.tsx = done
+#-----> Classement.tsx = done
+#-----> NotFound.tsx = done
+#-----> Profil.tsx = done
+#-----> GameMainPage.tsx = done
+#-----> GamePage.tsx = done
+#-----> GamePageCreate.tsx = done
+#-----> GamePageCreateAI.tsx = done
+#-----> GamePageTournament.tsx = done
+#-----> GameTestPage.tsx = done
+#-----> AccountGestion.tsx = done
+#-----> AccountHistorique.tsx = done
+#-----> AccountLogin.tsx = done
+#-----> AccountRegister.tsx = done
+
+#-----> Ball.tsx = done
+#-----> BallHitObject.tsx = done
+#-----> Board.tsx = done
+#-----> BoardWall.tsx = done
+#-----> ClientRoomData.tsx = done
+#-----> GameCountdown.tsx = done
+#-----> GameSummary.tsx = done
+#-----> HitLine.tsx = done
+#-----> Matchmaking.tsx = done
+#-----> Paddle.tsx = done
+#-----> PaddleHitLine.tsx = done
+#-----> Point.tsx = done
+#-----> TournamentSummary.tsx = done
+
+
+#-----> NUmberofPlayers = done
+
+
+
+# -Format
+#-----> Classement.tsx = done
+#-----> Home.tsx = done
+#-----> NotFound.tsx = done
+#-----> Profil.tsx = done
+#-----> Unusedlogin.tsx = done
+#-----> AdBanner.tsx = done
+#-----> LiveCounter.tsx = done
+#-----> LoginButton.tsx = done
+#-----> Sidebar.tsx = done
+#-----> YeQuoteGenerator.tsx = done
+#-----> ProtectedRoute.tsx = done
+#-----> PublicRoute.tsx = done
+
+
+#- app/backend -> isibiyeah

@@ -1,0 +1,28 @@
+• Web
+	◦ Minor module: Use a framework or a toolkit to build the frontend. [TPICOULE]
+		- Faisable / Quasi obligatiore a faire
+			-> Pour le front, on doit utiliser le Bootstrap toolkit en plus du pure vanilla Javascript
+			 ! On peut utiliser le choix par defaut impose par le sujet pour faire le frontend,
+			 ! donc pure vanilla Javascript seulement (voir doc III.2 - technicalRequirement)
+			 ! MAIS, logique, ca valide pas ce module
+
+• Accessibility
+	◦ Minor module: Support on all devices.
+		- Portes a l'entree, chiant, faut s'y prendre a l'avance
+		-> 1er point, faire le site responsive
+
+	◦ Minor module: Expanding Browser Compatibility.
+		- Peut etre faisable, mais vaut pas le coup si il demande trop de travail
+		  en mode le module est cool si on le valide gratuitement sans trop le travailler
+		-> Gerer un nouveau navigateur, s'assurer que les users puissent y acceder et les utiliser similairement
+		(Resume en bref)
+
+	◦ Minor module: Multiple language supports.
+		- Faut s'y prendre a la fin ou tout le long du projet, c'est a celui qui fait le front de voir
+		- Faisable
+
+	◦ Minor module: Add accessibility for Visually Impaired Users.
+		- A l'air chiant a faire, plus un trvail pour le front
+
+	◦ Minor module: Server-Side Rendering (SSR) Integration.
+		- Brandon sait pas mais il dit que c nul

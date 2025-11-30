@@ -1,0 +1,12 @@
+{
+	"type": "module",
+	"dependencies": {
+		"fastify": "^5.2.2",
+		"fs": "^0.0.1-security",
+		"https": "^1.0.0",
+		"path": "^0.12.7",
+		"uuid": "^11.1.0",
+		"ws": "^8.12.0",
+		"node-fetch": "^3.3.2"
+	}
+}

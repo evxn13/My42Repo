@@ -1,0 +1,28 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    GameCustomisationOptions                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: isibio <isibio@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/05/22 15:20:51 by isibio            #+#    #+#              #
+#    Updated: 2025/05/22 15:20:53 by isibio           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+GCO :
+
+Room -		roomName					[OK]
+			countdownBeforeGameStarts	[OK]
+			pointsForWin				[OK]
+			resetBallPositionOnGoal		[OK]
+			resetBallSpeedOnGoal		[OK]
+
+Ball -		starting position			[OK] [not modifiable by client]
+			starting speed				[OK]
+			size						[OK]
+			accelerationOnHit			[OK]
+			countdownBeforeBallLaunch	[OK]
+
+Paddle -	speed						[OK]
+			angle						[--]

@@ -1,0 +1,58 @@
+version: "3.8"
+
+services:
+  # seul point d'entrée via HTTPS
+  nginx:
+    build: ./requirements/nginx
+    container_name: nginx
+    ports:
+      - "443:443"  # TLS only
+    volumes:
+      - ./requirements/nginx/ssl:/etc/nginx/ssl  # TLS
+      - wordpress_data:/var/www/html           # WordPress
+    networks:
+      - inception_net
+    depends_on:
+      - wordpress
+    restart: always
+    env_file: .env
+
+  wordpress:
+    build: ./requirements/wordpress
+    container_name: wordpress
+    volumes:
+      - wordpress_data:/var/www/html
+    networks:
+      - inception_net
+    depends_on:
+      - mariadb
+    restart: always
+    env_file: .env
+
+  mariadb:
+    build: ./requirements/mariadb
+    container_name: mariadb
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - inception_net
+    restart: always
+    env_file: .env
+
+networks:
+  inception_net:
+    driver: bridge
+
+volumes:
+  mariadb_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/${USER}/data/mariadb
+      o: bind
+  wordpress_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/${USER}/data/wordpress
+      o: bind

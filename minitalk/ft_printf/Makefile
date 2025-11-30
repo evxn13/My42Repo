@@ -1,0 +1,36 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: evscheid <evscheid@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/12/01 17:32:09 by evscheid          #+#    #+#              #
+#    Updated: 2022/12/01 17:32:09 by evscheid         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME= libftprintf.a
+CC=gcc
+CFLAGS=-Wall -Wextra -Werror #-g -fsanitize=address
+RM=rm -f
+SRC = ft_hexx.c ft_hexa.c ft_putnbr.c ft_atoi.c ft_putstr_fd.c ft_strlen.c ft_putchar_fd.c ft_putnbr_base.c ft_putstr.c ft_printf.c ft_unsign.c ft_intlen.c ft_putchar.c
+OBJ = $(SRC:.c=.o)
+
+.o:.c
+	$(CC) $(CFLAGS) $< -o $(<:.c=.o)
+
+$(NAME): $(OBJ)
+		ar rcs ${NAME} $(OBJ)
+
+all: $(NAME)
+
+clean:
+		$(RM) $(OBJ)
+
+fclean: clean
+		$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
